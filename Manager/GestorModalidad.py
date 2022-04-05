@@ -29,8 +29,8 @@ class GestorModalidad:
             for result in cursor.stored_results():
                 for (id, nombre, plazo, tasa) in result:
                     modalidad = Modalidad(id, nombre, plazo, tasa)
+                    return modalidad
             self.conecttion.desconection()
-            return modalidad
         except Error as e:
             print(e)
             return None

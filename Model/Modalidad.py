@@ -22,4 +22,4 @@ class Modalidad:
     def setTasa(self,tasa):
         self.tasa = tasa
     def __str__(self):
-        return "id: " + str(self.id) + " nombre: " + self.nombre + " plazo: " + self.plazo + " tasa: " + self.tasa
+        return "id: " + str(self.id) + " nombre: " + self.nombre + " plazo: " + str(self.plazo) + " tasa: " + str(self.tasa)

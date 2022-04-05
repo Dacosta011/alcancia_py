@@ -29,8 +29,8 @@ class GestorSocio:
             for result in cursor.stored_results():
                 for (id, nombre, direccion, tel, cargo, empresa) in result:
                     socio = Socio(id, nombre, direccion, tel, cargo, empresa)
+                    return socio
             self.conecttion.desconection()
-            return socio
         except Error as e:
             print(e)
             return None

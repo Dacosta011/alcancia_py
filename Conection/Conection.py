@@ -7,7 +7,7 @@ class Conection:
             self.connection = connector.connect(host='localhost',
                                                 database='alcancia',
                                                 user='root',
-                                                password='root')
+                                                password='Vale26candy*')
             if self.connection.is_connected():
                 return self.connection
         except Error as e:

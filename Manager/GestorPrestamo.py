@@ -9,6 +9,7 @@ class GestorPrestamo:
     def createPrestamo(self, modalidad, socio, prestamo, fechaInicio, valor, cuota):
         prestamo = self.getPrestamo(modalidad, socio, prestamo)
         if prestamo is None:
+            print('entreeee')
             try:
                 con = self.conecttion.conection()
                 cursor = con.cursor()
@@ -26,10 +27,10 @@ class GestorPrestamo:
             cursor = con.cursor()
             cursor.callproc('getPrestamo', [modalidad, socio, prestamo])
             for result in cursor.stored_results():
-                for (id, modalidad, socio, prestamo, fechaInicio, valor, cuota) in result:
-                    prestamo = Prestamo(id, modalidad, socio, prestamo, fechaInicio, valor, cuota)
+                for (modalidad, socio, prestamo, fechaInicio, valor, cuota) in result:
+                    prestamo = Prestamo(modalidad, socio, prestamo, fechaInicio, valor, cuota)
+                    return prestamo
             self.conecttion.desconection()
-            return prestamo
         except Error as e:
             print(e)
             return None
@@ -41,8 +42,8 @@ class GestorPrestamo:
             cursor.callproc('allPrestamos')
             prestamos = []
             for result in cursor.stored_results():
-                for (id, modalidad, socio, prestamo, fechaInicio, valor, cuota) in result:
-                    prestamo = Prestamo(id, modalidad, socio, prestamo, fechaInicio, valor, cuota)
+                for (modalidad, socio, prestamo, fechaInicio, valor, cuota) in result:
+                    prestamo = Prestamo(modalidad, socio, prestamo, fechaInicio, valor, cuota)
                     print(prestamo)
                     print("\n")
                     prestamos.append(prestamo)

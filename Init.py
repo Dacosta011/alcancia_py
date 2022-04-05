@@ -4,7 +4,7 @@ from Manager.GestorPrestamo import GestorPrestamo
 from Manager.GestorSocio import GestorSocio
 
 
-class Init:
+class Menu:
     def __init__(self):
         self.gestorEmpresa = GestorEmpresa()
         self.gestorModalidad = GestorModalidad()
@@ -88,7 +88,7 @@ class Init:
                 print("Error: No se pudo eliminar la empresa")
             self.MenuEmpresa()
         elif opcion == "4":
-            self.gestorEmpresa.listEmpresas()
+            self.gestorEmpresa.allEmpresas()
             self.MenuEmpresa()
         elif opcion == "5":
             nombre = input("Ingrese el nombre de la empresa que quiere buscar: ")
@@ -120,7 +120,7 @@ class Init:
             plazo = int(input("Ingrese el plazo de la modalidad: "))
             tasa = float(input("Ingrese la tasa de la modalidad: "))
 
-            if type(id) is not int or type(nombre) is not str or type(plazo) is not int or type(tasa) is not int:
+            if type(id) is not int or type(nombre) is not str or type(plazo) is not int or type(tasa) is not float:
                 print("Error: Datos invalidos")
                 self.MenuModalidad()
             else:
@@ -137,7 +137,7 @@ class Init:
             plazo = int(input("Ingrese el plazo de la modalidad: "))
             tasa = float(input("Ingrese la tasa de la modalidad: "))
 
-            if type(id) is not int or type(nombre) is not str or type(plazo) is not int or type(tasa) is not int:
+            if type(id) is not int or type(nombre) is not str or type(plazo) is not int or type(tasa) is not float:
                 print("Error: Datos invalidos")
                 self.MenuModalidad()
             else:
@@ -190,10 +190,10 @@ class Init:
             nombre = input("Ingrese el nombre del socio: ")
             direccion = input("Ingrese la direccion del socio: ")
             telefono = input("Ingrese el telefono del socio: ")
-            cargo = int(input("Ingrese el cargo del socio: "))
-            empresa = int(input("Ingrese el nombre de la empresa del socio: "))
+            cargo = input("Ingrese el cargo del socio: ")
+            empresa = input("Ingrese el nombre de la empresa del socio: ")
         
-            if type(id) is not int or type(nombre) is not str or type(direccion) is not str or type(telefono) is not str or type(cargo) is not int or type(empresa) is not int:
+            if type(id) is not int or type(nombre) is not str or type(direccion) is not str or type(telefono) is not str or type(cargo) is not str or type(empresa) is not str:
                 print("Error: Datos invalidos")
                 self.MenuSocio()
             else:
@@ -209,10 +209,10 @@ class Init:
             nombre = input("Ingrese el nombre del socio: ")
             direccion = input("Ingrese la direccion del socio: ")
             telefono = input("Ingrese el telefono del socio: ")
-            cargo = int(input("Ingrese el cargo del socio: "))
-            empresa = int(input("Ingrese el nombre de la empresa del socio: "))
+            cargo = input("Ingrese el cargo del socio: ")
+            empresa = input("Ingrese el nombre de la empresa del socio: ")
         
-            if type(id) is not int or type(nombre) is not str or type(direccion) is not str or type(telefono) is not str or type(cargo) is not int or type(empresa) is not int:
+            if type(id) is not int or type(nombre) is not str or type(direccion) is not str or type(telefono) is not str or type(cargo) is not str or type(empresa) is not str:
                 print("Error: Datos invalidos")
                 self.MenuSocio()
             else:
@@ -263,7 +263,7 @@ class Init:
         if opcion == "1":
             modalidad = int(input("Ingrese el id de la modalidad: "))
             socio = int(input("Ingrese el id del socio: "))
-            prestamo = int(input("Ingrese el monto del prestamo: "))
+            prestamo = int(input("Ingrese el id del prestamo: "))
             fecha = input("Ingrese la fecha del prestamo: ")
             valor = int(input("Ingrese el valor del prestamo: "))
             cuota = int(input("Ingrese la cuota del prestamo: "))
@@ -327,6 +327,7 @@ class Init:
         elif opcion == "6":
             self.Menu()
 
+m=Menu()
         
 
 

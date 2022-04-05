@@ -28,8 +28,8 @@ class GestorEmpresa:
             for result in cursor.stored_results():
                 for (nombre, direccion, numEmp, convenio) in result:
                     empresa = Empresa(nombre, direccion, numEmp, convenio)
+                    return empresa
             self.conecttion.desconection()
-            return empresa
         except Error as e:
             print(e)
             return None

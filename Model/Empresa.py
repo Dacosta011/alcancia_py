@@ -22,4 +22,4 @@ class Empresa:
     def setConvenio(self,convenio):
         self.convenio = convenio
     def __str__(self):
-        return "nombre: " + self.nombre + " direccion: " + self.direccion + " numEmp: " + str(self.numEmp) + " convenio: " + self.convenio
+        return "nombre: " + self.nombre + " direccion: " + self.direccion + " numEmp: " + str(self.numEmp) + " convenio: " + str(self.convenio)

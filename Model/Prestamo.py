@@ -32,4 +32,4 @@ class Prestamo:
     def setCuota(self,cuota):
         self.cuota = cuota
     def __str__(self):
-        return "idPrestamo: " + str(self.idPrestamo) + " fechaInicio: " + self.fechaInicio + " valor: " + str(self.valor) + " cuota: " + str(self.cuota)
+        return "idPrestamo: " + str(self.idPrestamo) + " fechaInicio: " + str(self.fechaInicio) + " valor: " + str(self.valor) + " cuota: " + str(self.cuota)
